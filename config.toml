@@ -1,0 +1,220 @@
+# 这是Accesser的配置文件，保存到程序工作目录后重启程序生效。
+# This is the configuration file of Accesser, save it to the program working directory and restart the program to take effect.
+
+# 是否校验证书域名？false 不进行校验，true 进行宽松的校验（如a.example.com能匹配b.example.com），"strict" 进行标准的校验。
+# Whether to verify the certificate domains? Set to false for no verification, set to true for loose verification (e.g. a.example.com matches b.example.com), set to "strict" for standard verification.
+check_hostname = true
+
+# 是否自动设置系统的代理（目前只对Windows有效）。这可使用命令行参数 --notsetproxy 来覆盖。
+# Whether to set the system proxy automatically (currently only valid for Windows). This can be overridden with the command line argument --notsetproxy.
+setproxy = true
+
+# 是否自动导入并信任根证书（目前只对Windows有效）。这可使用命令行参数 --notimportca 来覆盖。
+# Whether to automatically import and trust the root certificate (currently only available for Windows). This can be overridden with the command line argument --notimportca.
+importca = true
+
+# 是否开启IPv6支持
+# Whether to enable IPv6 support
+ipv6 = false
+
+
+[log]
+
+# 日志级别: 可为"CRITICAL"、"ERROR"、"WARNING"、"INFO"、"DEBUG"、"NOTSET"，越后面的输出信息越多，参考Python的logging模块说明。
+# Logging level: can be "CRITICAL", "ERROR", "WARNING", "INFO", "DEBUG", "NOTSET", the later the more output information, refer to Python's logging module manual.
+loglevel = "DEBUG"
+
+# 日志文件路径，"" 表示输出至控制台（如果存在）而不是文件。
+# Log file path, "" indicates output to the console (if present) instead of a file.
+logfile = ""
+
+
+[server]
+
+# 服务器绑定的地址。设为 "0.0.0.0" 可以允许同一局域网的设备连接该程序，比如用手机连接电脑的WiFi，设置PAC后既可允许手机使用。可能会有防火墙的提示，要允许访问。
+# The address to which the server is bound. Set to "0.0.0.0" to allow devices on the same LAN to connect to the program, such as using your phone to connect to your computer's WiFi, after setting the PAC to allow both your phone to use it. There may be a firewall prompt to allow access.
+address = "127.0.0.1"
+
+# 服务器的端口号，如果与其他程序发生端口冲突时可以更改，其值应为1-65535，建议>1024。
+# The port number of the server, which can be changed in case of port conflicts with other programs, should have a value of 1-65535, with >1024 recommended.
+port = 7654
+
+# PAC文件中的代理主机。如供局域网使用，应设为安装了Accesser的设备在局域网中的IP。
+# The proxy host in the PAC file. If for LAN usage, it should be set to the IP of the device on the LAN where Accesser is installed.
+pac_host = "127.0.0.1"
+
+
+[DNS]
+
+# DNS服务器地址。可于下方 hosts 字段指定DNS服务器 host 对应的 IP 地址。
+# DNS server address. You can specify bootstrap IP address in the [hosts] field below.
+nameserver = [
+  "https://185.222.222.222/dns-query",# https://host|IP[:port]/path # DNS-over-HTTPS (DoH)
+  "https://45.11.45.11/dns-query",
+  "https://149.112.112.112/dns-query",
+  "https://149.112.112.10/dns-query",
+  "tls://149.112.112.112",            # tls://host|IP[:port]  # DNS-overTLS (DoT)
+  "tls://149.112.112.10",
+  "tls://dot.sb",
+  # "quic://dns.adguard-dns.com",     # quic://host|IP[:port] # DNS-over-QUIC (DoQ)
+  # "localhost"                       # host|IP[:port]        # 传统 UDP DNS | traditional UDP DNS
+]
+
+
+[http_redirect]
+
+# 如果一个HTTP（无TLS）请求的URL以下面某个键开头，则会被重定向到其值对应的URL（通过HTTPS请求）。
+# If the URL of an HTTP (no TLS) request starts with one of the following keys, it will be redirected to the URL corresponding to its value (via HTTPS request).
+
+"pixiv.net/" = "www.pixiv.net/"
+"www.google.com/recaptcha/" = "www.recaptcha.net/recaptcha/"
+"tumblr.com/" = "www.tumblr.com/"
+"instagram.com/" = "www.instagram.com/"
+
+
+[alter_hostname]
+
+# 与键对应的域名的TLS连接会使用其值对应的域名作为server_name字段，并且校验证书时也使用这一域名。键支持Unix shell风格的通配符。
+# A TLS connection to the domain corresponding to the key will use the domain name corresponding to its value as the server_name field, and this domain name is also used when verifying the certificate. The key supports Unix shell-style wildcards.
+
+"www.quora.com" = "fs.quoracdn.net"
+"sketch.pixiv.net" = "pixivsketch.net"
+"cdn1-smallimg.phncdn.com" = "pabbp.com"
+"nyaa.si" = "ddos-guard.net"
+"site.nicovideo.jp" = "d4fsvsnk8os9s.cloudfront.net"
+"blog.nicovideo.jp" = "d11c2xcc0ucqv1.cloudfront.net"
+"info.nicovideo.jp" = "d2c1o7y4lmdvf6.cloudfront.net"
+"www.ftchinese.com" = "d21srv90rgy5em.cloudfront.net"
+"site.live.stage.nicovideo.jp" = "d1kbkmcy8xlds0.cloudfront.net"
+"anime.nicovideo.jp" = "d1m4g6tauw16ys.cloudfront.net"
+"site.live.nicovideo.jp" = "d15yc1ruklb1w6.cloudfront.net"
+"dcdn.cdn.nicovideo.jp" = "d2urq2sf7li1b4.cloudfront.net"
+"static.prod.blogaws.nicovideo.jp" = "d11c2xcc0ucqv1.cloudfront.net"
+"pipelines.actions.githubusercontent.com" = "origin.mediaservices.windows.net"
+"steamcommunity.com" = "www.valvesoftware.com"
+"docs.github.com" = "api.github.com"
+"pubsub-edge.twitch.tv" = "external-2.us-west-2.prod.twitchpubsubedge.twitch.a2z.com"
+"irc-ws.chat.twitch.tv" = "websocket-7.us-west-2.prod.twitchircedge.twitch.a2z.com"
+"vod-secure.twitch.tv" = "ds0h3roq6wcgc.cloudfront.net"
+"extension-files.twitch.tv" = "d36mepituis1gg.cloudfront.net"
+"panels.twitch.tv" = "d1ut6fykkt3imt.cloudfront.net"
+"extensions-discovery-images.twitch.tv" = "d3m1uefep57n8q.cloudfront.net"
+"downloads.scratch.mit.edu" = "d2as4384mnnkdz.cloudfront.net"
+"gn-web-assets.api.bbc.com" = "static-web-assets.gnl-common.bbcverticals.com"
+"onedrive.live.com" = "0.azureedge.net"
+"euronews.com" = "euronews.news"
+
+
+[cert_verify]
+
+# 为域名分别设置证书校验策略，其值可以是一个包含用于校验的域名的列表（有一个匹配就通过），也可以是 false 表示不校验
+# 这比 [alter_hostname] 和全局的 check_hostname 的优先级高，但不会在 Client Hello 中作为 server_name 发送。
+# Set the certificate validation policy for domains individually. The values can be a array contain strings which represent the domain name used to verify the certificate (pass if there is a match), or false which means disabling the verification.
+# It has as a higher priority than [alter_hostname] and the global check_hostname, but will not be sent as server_name in Client Hello.
+
+"singlelogin.se" = ["1lib.fr", "singlelogin.se", "singlelogin.re"]
+"*.singlelogin.se" = ["1lib.fr", "singlelogin.se", "singlelogin.re"]
+"singlelogin.re" = ["1lib.fr", "singlelogin.se", "singlelogin.re"]
+"*.singlelogin.re" = ["1lib.fr", "singlelogin.se", "singlelogin.re"]
+"scratch.mit.edu" = ["scratchfoundation.map.fastly.net"]
+"*.scratch.mit.edu" = ["scratchfoundation.map.fastly.net"]
+"*.euronews.com" = ["fastly.com"]
+"mega.io" = ["static.mega.co.nz"]
+"bandcamp.com" = ["fastly.com"]
+"*.bandcamp.com" = ["fastly.com"]
+"nytimes.com" = ["fastly.com"]
+"*.nytimes.com" = ["fastly.com"]
+"reddit.com" = ["fastly.com"]
+"*.reddit.com" = ["fastly.com"]
+"redd.it" = ["fastly.com"]
+"*.redd.it" = ["fastly.com"]
+"*.redditstatic.com" = ["fastly.com"]
+"redditmedia.com" = ["fastly.com"]
+"*.redditmedia.com" = ["fastly.com"]
+"redditinc.com" = ["fastly.com"]
+"*.redditinc.com" = ["fastly.com"]
+"mastodon.social" = ["fastly.com"]
+"*.mastodon.social" = ["fastly.com"]
+
+
+[hosts]
+
+# 自定义 域名-IP 映射，即用于与网站建立连接，也用于与DNS服务器建立连接。
+# Customize domain-IP mapping, which is used to establish a connection with the website and the DNS server.
+
+# example for DNS server bootstrap address
+"dot.sb" = "185.222.222.222"
+# "dns.adguard-dns.com" = "94.140.14.14"
+
+"sketch.pixiv.net" = "210.140.174.37"
+"img-sketch.pixiv.net" = "210.140.131.145"
+"source.pixiv.net" = "210.140.131.153"
+".pixiv.net" = "pixivision.net"
+"www.bbc.co.uk" = "212.58.233.252"
+"count.wenxuecity.com" = "0.0.0.0"
+"adserver.wenxuecity.com" = "0.0.0.0"
+"www.dropbox.com" = "162.125.69.1"
+".appledaily.com" = "60.254.170.127"
+".e-hentai.org" = "e-hentai.org.cdn.cloudflare.net"
+"info.nicovideo.jp" = "d2c1o7y4lmdvf6.cloudfront.net"
+"blog.nicovideo.jp" = "d11c2xcc0ucqv1.cloudfront.net"
+"site.nicovideo.jp" = "d4fsvsnk8os9s.cloudfront.net"
+"site.live.stage.nicovideo.jp" = "d1kbkmcy8xlds0.cloudfront.net"
+"anime.nicovideo.jp" = "d1m4g6tauw16ys.cloudfront.net"
+"site.live.nicovideo.jp" = "d15yc1ruklb1w6.cloudfront.net"
+"dcdn.cdn.nicovideo.jp" = "d2urq2sf7li1b4.cloudfront.net"
+"static.prod.blogaws.nicovideo.jp" = "d11c2xcc0ucqv1.cloudfront.net"
+"www.ftchinese.com" = "d21srv90rgy5em.cloudfront.net"
+"bandcamp.com" = "fastly.com"
+".bandcamp.com" = "fastly.com"
+"nytimes.com" = "fastly.com"
+"cn.nytimes.com" = "13.33.171.121"
+".nytimes.com" = "fastly.com"
+"nyt.com" = "fastly.com"
+".nyt.com" = "fastly.com"
+"reddit.com" = "fastly.com"
+".reddit.com" = "fastly.com"
+"redd.it" = "fastly.com"
+".redd.it" = "fastly.com"
+".redditstatic.com" = "fastly.com"
+"redditmedia.com" = "fastly.com"
+".redditmedia.com" = "fastly.com"
+".euronews.com" = "fastly.com"
+"www.bbc.com" = "151.101.128.81"
+"disqus.com" = "151.101.64.134"
+"i.imgur.com" = "151.101.196.193"
+"i.stack.imgur.com" = "151.101.196.193"
+".theepochtimes.com" = "151.139.128.13"
+"donate.epochtimes.com" = "151.139.128.13"
+"i.epochtimes.com" = "151.139.128.13"
+"mediawiki.org" = "text-lb.esams.wikimedia.org"
+".mediawiki.org" = "text-lb.esams.wikimedia.org"
+"wikipedia.org" = "text-lb.esams.wikimedia.org"
+".wikipedia.org" = "text-lb.esams.wikimedia.org"
+"wikiquote.org" = "text-lb.esams.wikimedia.org"
+".wikiquote.org" = "text-lb.esams.wikimedia.org"
+"wikinews.org" = "text-lb.esams.wikimedia.org"
+".wikinews.org" = "text-lb.esams.wikimedia.org"
+"wikiversity.org" = "text-lb.esams.wikimedia.org"
+".wikiversity.org" = "text-lb.esams.wikimedia.org"
+"wiktionary.org" = "text-lb.esams.wikimedia.org"
+".wiktionary.org" = "text-lb.esams.wikimedia.org"
+"wikibooks.org" = "text-lb.esams.wikimedia.org"
+".wikibooks.org" = "text-lb.esams.wikimedia.org"
+"wikivoyage.org" = "text-lb.esams.wikimedia.org"
+".wikivoyage.org" = "text-lb.esams.wikimedia.org"
+"wikisource.org" = "text-lb.esams.wikimedia.org"
+".wikisource.org" = "text-lb.esams.wikimedia.org"
+"wikidata.org" = "text-lb.esams.wikimedia.org"
+".wikidata.org" = "text-lb.esams.wikimedia.org"
+"wikimedia.org" = "text-lb.esams.wikimedia.org"
+"upload.wikimedia.org" = "upload-lb.esams.wikimedia.org"
+".wikimedia.org" = "text-lb.esams.wikimedia.org"
+"exhentai.org" = "178.175.128.252"
+"scratch.mit.edu" = "scratchfoundation.map.fastly.net"
+".scratch.mit.edu" = "scratchfoundation.map.fastly.net"
+"archive.org" = "207.241.224.27"
+"mastodon.social" = "fastly.com"
+"*.mastodon.social" = "fastly.com"
+"singlelogin.se" = "195.66.210.33"
+".singlelogin.se" = "195.66.210.33"
