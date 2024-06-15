@@ -11,7 +11,7 @@
 </template>
 <script setup lang="ts">
 function imgPath():string {
-    const m:number = Math.random()
+    const m: number = Math.random()
     if (m < 0.3333) {
         return '/src/assets/wqjh1.webp'
     } else if (m >= 0.3333 && m < 0.6666) {
