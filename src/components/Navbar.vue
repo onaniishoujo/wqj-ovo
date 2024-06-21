@@ -1,34 +1,33 @@
 <template>
-    <nav :class="{ 'bg-transparent backdrop-blur-3xl border-b-0': isTop, 'bg-white shadow-md border-b': !isTop }" class="z-50 w-full h-[64px] border flex lg:fixed top-0 items-center ease-in-out delay-150">
-        <span id="logo" class="inline-block ml-10 outline-dashed rounded outline-1 outline-offset-8 outline-gray-200 text-lg"><a href="/">杰哥嫖娼</a></span>
-        <img @click="avatarLink" class="hover:outline-offset-4 hover:outline-dashed outline-1 outline-gray-400 inline-block absolute right-10 h-[64px] rounded-full ring-2 ring-[#47caff] shadow-2xl" alt="avatar" src="/src/assets/avatar.jpg"/>
-    </nav>
+<div class="navbar bg-base-100 shadow-sm rounded-3xl">
+  <div class="flex-1">
+    <a class="btn btn-ghost text-xl">杰哥嫖娼</a>
+  </div>
+  <div class="flex-none">
+    <div class="dropdown dropdown-end">
+      <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+        <div class="indicator">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+          <span class="badge badge-sm indicator-item">8</span>
+        </div>
+      </div>
+      <div tabindex="0" class="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow">
+        <div class="card-body">
+          <span class="font-bold text-lg">8 Items</span>
+          <span class="text-info">Subtotal: $999</span>
+          <div class="card-actions">
+            <button class="btn btn-primary btn-block">View cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="dropdown dropdown-end">
+      <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+        <div class="w-10 rounded-full">
+          <img alt="avatar" src="../assets/avatar.jpg" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 </template>
-
-<script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
-
-const isTop = ref(true);
-
-const handleScroll = () => {
-    isTop.value = window.scrollY === 0;
-}
-
-function avatarLink():void {
-    location.href = 'https://shoujo.deno.dev/'
-}
-
-onMounted(() => {
-    window.addEventListener('scroll', handleScroll);
-})
-
-onUnmounted(() => {
-    window.removeEventListener('scroll', handleScroll);
-})
-</script>
-
-<style>
-#logo {
-    font-family: 'LXGW WenKai';
-}
-</style>

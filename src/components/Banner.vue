@@ -3,13 +3,15 @@
     <div class="hidden lg:inline">
 
         <!-- 模糊遮罩 -->
-        <div class="absolute bg-[#ffffff80] -z-10 backdrop-blur-2xl w-4/5 h-3/4 rounded-3xl left-0 right-0 m-auto top-0 bottom-0"></div>
+        <!-- <div class="absolute bg-[#ffffffcc] -z-10 backdrop-blur-2xl w-4/5 h-3/4 rounded-3xl left-0 right-0 m-auto top-0 bottom-0"></div> -->
 
         <!-- 标题 -->
         <div class="w-auto text-left mx-44 mt-32">
             <strong id="title" class="text-transparent text-9xl bg-gradient-to-tl from-[#bd34fe] to-[#41d1ff] bg-clip-text">杰哥嫖娼</strong>
             <p class="mt-10"><br>当你凝视杰哥时&nbsp;杰哥也在凝视你</p><br>
-            <button @click="learnMore" class="text-white rounded-3xl text-2xl font-light border bg-gradient-to-tl from-[#bd34fe] to-[#47caff]">&nbsp;&nbsp;&nbsp;&nbsp;Learn More...&nbsp;&nbsp;&nbsp;&nbsp;</button>
+            <!-- <button @click="learnMore" class="text-white rounded-3xl text-2xl font-light border bg-gradient-to-tl from-[#bd34fe] to-[#47caff]">&nbsp;&nbsp;&nbsp;&nbsp;Learn More...&nbsp;&nbsp;&nbsp;&nbsp;</button> -->
+            <button class="btn btn-primary shadow-lg" @click="learnMore">&nbsp;&nbsp;&nbsp;&nbsp;我爱王庆杰&nbsp;&nbsp;&nbsp;&nbsp;</button>
+            <button class="btn btn-outline ml-3 shadow-lg" @click="learnMore">我就是喜欢王庆杰</button>
         </div>
         <!-- 图片背景容器 -->
         <div class="flex justify-center items-center">
@@ -24,7 +26,7 @@
     <div class="lg:hidden inline">
 
         <!-- 模糊遮罩 -->
-        <div class="absolute bg-[#ffffff80] -z-10 backdrop-blur-lg w-4/5 h-3/4 rounded-3xl left-0 right-0 m-auto top-0 bottom-0"></div>
+        <!-- <div class="absolute bg-[#ffffff80] -z-10 backdrop-blur-lg w-4/5 h-3/4 rounded-3xl left-0 right-0 m-auto top-0 bottom-0"></div> -->
 
         <!-- 图片背景容器 -->
         <div class="flex justify-center items-center">
@@ -37,7 +39,9 @@
         <div class="top-56 relative mx-10 mt-28 text-center">
             <strong id="title" class="text-transparent bg-gradient-to-tl from-[#bd34fe] to-[#41d1ff] bg-clip-text text-7xl">杰哥嫖娼</strong>
             <p><br>当你凝视杰哥时&nbsp;杰哥也在凝视你</p><br>
-            <button @click="learnMore" class="text-white rounded-3xl text-2xl font-light border bg-gradient-to-tl from-[#bd34fe] to-[#47caff]">&nbsp;&nbsp;&nbsp;&nbsp;Learn More...&nbsp;&nbsp;&nbsp;&nbsp;</button>
+            <!-- <button @click="learnMore" class="text-white rounded-3xl text-2xl font-light border bg-gradient-to-tl from-[#bd34fe] to-[#47caff]">&nbsp;&nbsp;&nbsp;&nbsp;Learn More...&nbsp;&nbsp;&nbsp;&nbsp;</button> -->
+            <button class="btn btn-primary shadow-lg" @click="learnMore">&nbsp;&nbsp;&nbsp;&nbsp;我爱王庆杰&nbsp;&nbsp;&nbsp;&nbsp;</button><br>
+            <button class="btn btn-outline mt-3 shadow-lg" @click="learnMore">我就是喜欢王庆杰</button>
         </div>
     </div>
 </template>

@@ -2,3 +2,4 @@
 
 // Add custom js files 'fish.js'
 declare module '*.js'
+declare module 'parallax-js'

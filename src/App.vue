@@ -6,14 +6,16 @@ import Navbar from './components/Navbar.vue'
 import Sakana from './components/Sakana.vue'
 import Back from './components/Back.vue'
 import Footer from './components/Footer.vue'
+import Main from './components/Main.vue'
 </script>
 
 <template>
   <Navbar />
-  <Back />
+  <!-- <Back /> -->
   <Banner /><br><br><br><br><br><br><br></br><br><br><br><br>
   <!-- <Split /> -->
-  <Sakana />
+  <!-- <Sakana /> -->
   <a id="content"></a>
+  <Main />
   <!-- <Footer /> -->
 </template>
