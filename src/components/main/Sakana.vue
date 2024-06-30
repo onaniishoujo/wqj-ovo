@@ -4,7 +4,7 @@
         <div class="lg:order-2 lg:w-1/2 p-2 lg:-translate-x-1/4 lg:ml-24">
             <span class="neon text-6xl translate-y-10 left-0 right-0 m-0 lg:left-auto lg:right-auto mx-10 lg:mx-0 blur-[24px]" style="position: absolute;">{{ koto }}</span>
             <span class="relative neon text-6xl lg:float-start my-10">{{ koto }}</span>
-            <img class="rounded-3xl relative shadow-xl" src="../assets/laolai.png" alt="laolai" />
+            <img class="rounded-3xl relative shadow-xl" src="/src/assets/laolai.png" alt="laolai" />
         </div>
     </div>
 </template>

@@ -10,7 +10,7 @@ const bgCanvas = ref<HTMLCanvasElement | null>(null)
 onMounted(() => {
     if (bgCanvas.value){
         webGLFluidEnhanced.simulation(bgCanvas.value, {BACK_COLOR: '#ffffff', DYE_RESOLUTION: 512, SPLAT_KEY: '', HOVER: false})
-        setInterval(()=>{
+        setInterval(() => {
             webGLFluidEnhanced.splats()
         }, 3000)
     }

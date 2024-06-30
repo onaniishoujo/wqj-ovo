@@ -1,5 +1,6 @@
 /// <reference types="vite/client" />
 
-// Add custom js files 'fish.js'
-declare module '*.js'
-declare module 'parallax-js'
+// Add custom files and js lib
+declare module '*.js';
+declare module 'parallax-js';
+declare module '@waline/client/component';

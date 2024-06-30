@@ -1,5 +1,5 @@
 <template>
-<div class="navbar bg-base-100 shadow-sm rounded-3xl">
+<div class="navbar bg-base-100 shadow-sm rounded-3xl top-0">
   <div class="flex-1">
     <a class="btn btn-ghost text-xl">杰哥嫖娼</a>
   </div>
@@ -13,10 +13,10 @@
       </div>
       <div tabindex="0" class="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow">
         <div class="card-body">
-          <span class="font-bold text-lg">8 Items</span>
-          <span class="text-info">Subtotal: $999</span>
+          <span class="font-bold text-lg">8 个杰哥</span>
+          <span class="text-info">共计: $999</span>
           <div class="card-actions">
-            <button class="btn btn-primary btn-block">View cart</button>
+            <button onclick="location.reload()" class="btn btn-primary btn-block">去结算</button>
           </div>
         </div>
       </div>

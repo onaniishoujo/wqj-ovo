@@ -1,5 +1,5 @@
 <template>
-<div class="mockup-phone absolute left-1/2 -translate-x-1/2 mt-10">
+<div class="mockup-phone absolute left-1/2 -translate-x-1/2 mt-10 shadow-2xl hover:shadow-sm">
     <div class="camera"></div> 
     <div class="display">
         <div class="artboard artboard-demo phone-1 bg-slate-100">
@@ -13,7 +13,7 @@
                 <div class="chat chat-start">
                 <div class="chat-image avatar">
                     <div class="w-10 rounded-full">
-                    <img alt="Tailwind CSS chat bubble component" src="../assets/wag.jpg" />
+                    <img alt="Tailwind CSS chat bubble component" src="/src/assets/wag.jpg" />
                     </div>
                 </div>
                 <div class="chat-header">
@@ -29,7 +29,7 @@
                 <div class="chat chat-start">
                 <div class="chat-image avatar">
                     <div class="w-10 rounded-full">
-                    <img alt="Tailwind CSS chat bubble component" src="../assets/wico.jpg" />
+                    <img alt="Tailwind CSS chat bubble component" src="/src/assets/wico.jpg" />
                     </div>
                 </div>
                 <div class="chat-header">
@@ -45,7 +45,7 @@
                 <div class="chat chat-end">
                 <div class="chat-image avatar">
                     <div class="w-10 rounded-full">
-                    <img alt="Tailwind CSS chat bubble component" src="../assets/avatar.jpg" />
+                    <img alt="Tailwind CSS chat bubble component" src="/src/assets/avatar.jpg" />
                     </div>
                 </div>
                 <div class="chat-header">
@@ -63,7 +63,7 @@
                     </button>
                     <input @focus="iptFocus" v-model="msg" ref="ipt" id="iptc" type="text" placeholder="@王庆杰妈妈" class="input border-none w-48 h-10 mx-1">
                     <button class="btn btn-circle btn-sm mx-1">
-                        <img src="../assets/laughing.svg">
+                        <img src="/src/assets/laughing.svg">
                     </button>
                     <button @click="submitText" id="submit_button" ref="submitButton" class="btn btn-circle btn-outline btn-sm mx-1 text-lg">+</button>
                 </div>
@@ -76,7 +76,7 @@
 <script setup lang="ts">
 import { ref, type Ref } from 'vue'
 
-let msg: any = ref('@王庆杰妈妈 ')
+let msg: any = ref('这里能输入并发送消息')
 const msgBody: Ref<HTMLElement | undefined> = ref()
 const submitButton: Ref<HTMLElement | undefined> = ref()
 const ipt: Ref<HTMLElement | undefined> = ref()

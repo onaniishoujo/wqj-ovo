@@ -9,6 +9,7 @@
     <Chat />
     <Card />
     <Part />
+    <!-- <Intro /> -->
 </template>
 
 <script setup lang="ts">
@@ -16,4 +17,5 @@ import Sakana from './Sakana.vue'
 import Chat from './Chat.vue'
 import Card from './Card.vue'
 import Part from './Part.vue'
+import Intro from './Intro.vue'
 </script>

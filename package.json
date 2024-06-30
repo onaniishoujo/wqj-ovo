@@ -21,6 +21,7 @@
     "@types/node": "^20.11.10",
     "@vitejs/plugin-vue": "^5.0.3",
     "@vue/tsconfig": "^0.5.1",
+    "@waline/client": "^3.2.6",
     "autoprefixer": "^10.4.19",
     "daisyui": "^4.12.2",
     "npm-run-all2": "^6.1.1",
