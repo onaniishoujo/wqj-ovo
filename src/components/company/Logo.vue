@@ -1,6 +1,6 @@
 <template>
     <div class="mt-96">
-        <img class="mx-auto -translate-y-full" src="../../assets/comlogo.png" alt="Logo">
+        <img class="mx-auto bg-base-100 rounded-full bg-opacity-80 -translate-y-full" src="../../assets/comlogo.png" alt="Logo">
         <Split />
     </div>
 </template>

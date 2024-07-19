@@ -14,7 +14,7 @@
       <div tabindex="0" class="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow">
         <div class="card-body">
           <span class="font-bold text-lg">8 个杰哥</span>
-          <span class="text-info">共计: $999</span>
+          <span class="text-info">共计: $888</span>
           <div class="card-actions">
             <button onclick="location.reload()" class="btn btn-primary btn-block">去结算</button>
           </div>

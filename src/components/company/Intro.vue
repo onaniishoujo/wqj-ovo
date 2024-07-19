@@ -1,9 +1,7 @@
 <template>
     <div class="hero bg-white min-h-screen">
     <div class="hero-content flex-col lg:flex-row">
-        <img
-        src="/src/assets/ns.jpg"
-        class="max-w-sm rounded-lg shadow-2xl w-full" />
+        <img data-aos="fade-right" src="/src/assets/ns.jpg" class="max-w-sm rounded-lg shadow-2xl w-full" />
         <div>
         <h1 class="outline-dashed outline-sky-200 rounded-box">
             <div class="neon text-7xl blur-[24px] sm:translate-x-[60%]" style="position: absolute;">公司简介</div>
@@ -27,5 +25,5 @@
         <button class="btn btn-primary rounded-box" onclick="javascript: location.href='https://cyberpolice.mps.gov.cn/'">点我预定足疗服务</button>
     </div>
     </div>
-    <img src="/src/assets/zd.jpg" class="rounded-box mt-10" alt="zd">
+    <img data-aos="zoom-in" src="/src/assets/zd.jpg" class="rounded-box mt-10" alt="zd">
 </template>

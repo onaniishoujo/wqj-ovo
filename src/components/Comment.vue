@@ -1,16 +1,16 @@
 <template>
-    <h1 class="w-4/5 mx-auto text-center font-bold text-4xl lg:text-6xl my-10 lg:text-left">杰哥的评论区! </h1>
-    <p class="w-4/5 mx-auto text-center lg:text-left"><del>反正就是评论区了 剩下的懒得写了</del></p>
-    <div class="w-4/5 mx-auto mb-16">
+    <h1 id="comh" class="w-5/6 mx-auto text-center font-bold text-4xl lg:text-6xl my-12 lg:text-left lg:indent-16">杰哥的评论区! </h1>
+    <p class="w-5/6 mx-auto text-center lg:text-left"><del>反正就是评论区了 剩下的懒得写了</del></p>
+    <div class="w-5/6 mx-auto mb-16">
         <div class="card lg:card-side bg-base-100 shadow-xl">
-        <figure>
+        <figure data-aos="zoom-in">
             <img src="/src/assets/mkas.webp" class="h-80 rounded-3xl sm:rounded shadow" alt="Album" />
         </figure>
         <div class="card-body">
             <h2 class="card-title">Douglas MacArthur 麦克阿瑟曾说过</h2>
             <div class="chat chat-start">
-            <div class="chat-bubble text-xl lg:text-6xl text-white left-0 right-0 m-auto lg:translate-y-1/2 bg-[#66ccff]">
-                &nbsp;我喜欢于明月!&nbsp;<br>
+            <div data-aos="zoom-in-right" class="chat-bubble text-xl lg:text-6xl text-white left-0 right-0 m-auto lg:translate-y-1/2 bg-[#66ccff]">
+                &nbsp;我喜欢<strong>于明月</strong>!&nbsp;<br>
                 (I like Ding Mingyue!)
             </div>
             </div>
@@ -21,14 +21,12 @@
 
         <div class="hero bg-base-200 min-h-full rounded-box mt-10">
         <div class="hero-content flex-col lg:flex-row-reverse">
-            <img
-            src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg"
-            class="max-w-sm rounded-lg shadow-2xl" />
+            <img data-aos="zoom-in" src="../assets/zzx.webp" class="max-w-sm rounded-lg shadow-2xl" />
             <div>
             <h1 class="text-5xl font-bold">Spider-Man曾说过</h1>
-            <div class="chat chat-start">
+            <div data-aos="zoom-in-right" class="chat chat-start">
             <p class="py-6 chat-bubble text-xl lg:text-6xl text-white">
-                我也喜欢于明月! <br>
+                我也喜欢<strong>于明月</strong>! <br>
                 (I also like Ding Mingyue! )
             </p></div>
             </div>
@@ -36,15 +34,16 @@
         </div>
 
         <div class="card lg:card-side bg-base-100 shadow-xl mt-10">
-        <figure>
+        <figure data-aos="zoom-in">
             <img src="/src/assets/wico.jpg" class="h-80 rounded-3xl sm:rounded shadow" alt="Album" />
         </figure>
         <div class="card-body">
             <h2 class="card-title">Wang Qingjie 木下加四点曾说过</h2>
+            <span class="hidden lg:inline">( 脑子被边框夹了 )</span>
             <div class="chat chat-start">
-            <div class="chat-bubble text-xl lg:text-4xl lg:translate-y-1/4 text-white left-0 right-0 m-auto bg-[#66ccff]">
+            <div data-aos="zoom-in-right" class="chat-bubble text-xl lg:text-4xl lg:translate-y-1/4 text-white left-0 right-0 m-auto bg-[#66ccff]">
                 你们都不是真爱!
-                只有我喜欢丁明月!<br>
+                只有我喜欢<strong>丁明月</strong>!<br>
                 (あなたがたの誰一人として真実の愛ではない! ディン・ミンユエが好きなのは私だけ!)
             </div>
             </div>
@@ -78,7 +77,7 @@ function changeAvatar(): void {
             if (mutation.type === 'childList') {
                 const imgElement = document.querySelector('img.wl-user-avatar') as HTMLImageElement | null;
                 if (imgElement) {
-                    imgElement.src = '/src/assets/nxavatar.jpg';
+                    imgElement.src = '/nxavatar.jpg';
                     // 停止观察，因为已经找到了目标元素
                     observer.disconnect();
                     break;
@@ -108,5 +107,8 @@ changeAvatar()
 :root {
     --waline-theme-color: #66ccff !important;
     --waline-active-color: #39c5bb !important;
+}
+#comh {
+    font-family: 'LXGW Wenkai';
 }
 </style>

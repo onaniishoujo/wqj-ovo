@@ -1,10 +1,10 @@
 <template>
     <div class="flex flex-col lg:flex-row lg:items-end overflow-x-clip">
-        <div ref="sakana_widget" class="lg:order-1 mx-auto bg-white rounded-3xl shadow-xl"></div>
+        <div data-aos="zoom-in" ref="sakana_widget" class="w-full sm:w-auto lg:order-1 mx-auto bg-white rounded-3xl shadow-xl"></div>
         <div class="lg:order-2 lg:w-1/2 p-2 lg:-translate-x-1/4 lg:ml-24">
             <span class="neon text-6xl translate-y-10 left-0 right-0 m-0 lg:left-auto lg:right-auto mx-10 lg:mx-0 blur-[24px]" style="position: absolute;">{{ koto }}</span>
             <span class="relative neon text-6xl lg:float-start my-10">{{ koto }}</span>
-            <img class="rounded-3xl relative shadow-xl" src="/src/assets/laolai.png" alt="laolai" />
+            <img data-aos="fade-left" class="rounded-3xl relative shadow-xl" src="/src/assets/laolai.png" alt="laolai" />
         </div>
     </div>
 </template>
@@ -15,7 +15,7 @@ import SakanaWidget, { type SakanaWidgetCharacter } from 'sakana-widget'
 import { ref, onMounted } from 'vue'
 
 const sakana_widget = ref<HTMLElement | null>(null)
-const sound = new Audio('/src/assets/sound.mp3')
+const sound = new Audio('/sound.mp3')
 const koto = ref('王庆杰 (老赖)')
 
 function playEvent(): void {
@@ -28,7 +28,7 @@ function playEvent(): void {
 onMounted(()=>{
     if (sakana_widget.value){
         const wqj = SakanaWidget.getCharacter('chisato') as SakanaWidgetCharacter
-        wqj.image = '/src/assets/sakana.webp'
+        wqj.image = '/sakana.webp'
         SakanaWidget.registerCharacter('wqj', wqj)
         new SakanaWidget({ character: 'wqj', size: 300}).mount(sakana_widget.value)
 

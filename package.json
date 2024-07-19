@@ -11,6 +11,8 @@
     "type-check": "vue-tsc --build --force"
   },
   "dependencies": {
+    "@types/aos": "^3.0.7",
+    "aos": "^2.3.4",
     "parallax-js": "^3.1.0",
     "sakana-widget": "^2.7.0",
     "vue": "^3.4.15",

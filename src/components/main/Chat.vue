@@ -6,7 +6,7 @@
             <div class="absolute top-10 text-center font-semibold z-10 bg-slate-100">
                 <span class="absolute w-10 -right-8 -top-4 z-30"><svg id="Flat" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M74,128a10,10,0,1,1-10-10A10.01114,10.01114,0,0,1,74,128Zm118-10a10,10,0,1,0,10,10A10.01146,10.01146,0,0,0,192,118Zm-64,0a10,10,0,1,0,10,10A10.01114,10.01114,0,0,0,128,118Z"/></svg>
                 </span>
-                <p class="relative w-60 text-center">初2021级4班 (113)</p>
+                <p class="relative w-60 text-center">初2021级4班 (123)</p>
                 <span class="absolute w-8 -left-8 -top-2 z-30"><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><title/><g data-name="1" id="_1"><path d="M353,450a15,15,0,0,1-10.61-4.39L157.5,260.71a15,15,0,0,1,0-21.21L342.39,54.6a15,15,0,1,1,21.22,21.21L189.32,250.1,363.61,424.39A15,15,0,0,1,353,450Z"/></g></svg></span>
             </div>
             <div ref="msgBody" class="w-4/5 mx-auto mt-0 overflow-auto scroll mb-16">
@@ -20,7 +20,7 @@
                     王安国
                     <time class="text-xs opacity-50">12:45</time>
                 </div>
-                <div class="chat-bubble bg-white text-black">@王庆杰妈妈 王庆杰又逃课去嫖娼了! 还没给钱!</div>
+                <div data-aos="zoom-in-right" class="chat-bubble bg-white text-black">@王庆杰妈妈 王庆杰又逃课去嫖娼了! 还没给钱!</div>
                 <div class="chat-footer opacity-50">
                     Delivered
                 </div>
@@ -36,7 +36,7 @@
                     王庆杰妈妈
                     <time class="text-xs opacity-50">12:45</time>
                 </div>
-                <div class="chat-bubble bg-white text-black">不好意思, 我们家杰哥从小就爱嫖, 让您费心了🌹🌹</div>
+                <div data-aos="zoom-in-right" class="chat-bubble bg-white text-black">不好意思, 我们家杰哥从小就爱嫖, 让您费心了🌹🌹</div>
                 <div class="chat-footer opacity-50">
                     Delivered
                 </div>
@@ -52,7 +52,7 @@
                     オナニー少女w
                     <time class="text-xs opacity-50">12:46</time>
                 </div>
-                <div class="chat-bubble bg-green-400 text-black">@王庆杰妈妈 杰哥包夜的钱转给我谢谢</div>
+                <div data-aos="zoom-in-left" class="chat-bubble bg-green-400 text-black">@王庆杰妈妈 杰哥包夜的钱转给我谢谢</div>
                 <div class="chat-footer opacity-50">
                     Seen at 12:46
                 </div>
@@ -76,7 +76,7 @@
 <script setup lang="ts">
 import { ref, type Ref } from 'vue'
 
-let msg: any = ref('这里能输入并发送消息')
+let msg: any = ref('@王庆杰妈妈 ')
 const msgBody: Ref<HTMLElement | undefined> = ref()
 const submitButton: Ref<HTMLElement | undefined> = ref()
 const ipt: Ref<HTMLElement | undefined> = ref()
@@ -86,7 +86,7 @@ function submitText(): void {
     if (msgBody.value) {
         msg.value = msg.value.replace(/</g, '')
         msg.value = msg.value.replace(/>/g, '')
-        let msgTemplate: string = `<div class="chat chat-end"><div class="chat-image avatar"><div class="w-10 rounded-full"><img src="/src/assets/avatar.jpg" /></div></div><div class="chat-header">オナニー少女w<time class="text-xs opacity-50">12:46</time></div><div class="chat-bubble bg-green-400 text-black break-all">${msg.value}</div><div class="chat-footer opacity-50">Seen at 12:46</div>`
+        let msgTemplate: string = `<div class="chat chat-end"><div class="chat-image avatar"><div class="w-10 rounded-full"><img src="/src/assets/avatar.jpg" /></div></div><div class="chat-header">オナニー少女w<time class="text-xs opacity-50">12:46</time></div><div data-aos="zoom-in-left" class="chat-bubble bg-green-400 text-black break-all">${msg.value}</div><div class="chat-footer opacity-50">Seen at 12:46</div>`
         msgBody.value.innerHTML += msgTemplate
         let s = document.getElementById('submit_button') as HTMLElement
         msg = document.getElementById('iptc') as HTMLElement

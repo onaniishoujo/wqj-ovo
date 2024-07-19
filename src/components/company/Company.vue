@@ -1,6 +1,6 @@
 <template>
-    <div class="w-4/5 mx-auto">
-        <Logo />
+    <div class="w-5/6 mx-auto">
+        <!-- <Logo /> -->
         <Story />
         <Carousel />
         <Intro />
@@ -8,7 +8,7 @@
 </template>
 
 <script setup lang="ts">
-import Logo from './Logo.vue'
+// import Logo from './Logo.vue'
 import Story from './Story.vue'
 import Carousel from "./Carousel.vue"
 import Intro from './Intro.vue'
