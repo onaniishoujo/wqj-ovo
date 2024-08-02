@@ -1,6 +1,6 @@
 <template>
-    <h1 id="comh" class="w-5/6 mx-auto text-center font-bold text-4xl lg:text-6xl my-12 lg:text-left lg:indent-16">杰哥的评论区! </h1>
-    <p class="w-5/6 mx-auto text-center lg:text-left"><del>反正就是评论区了 剩下的懒得写了</del></p>
+    <h1 id="comh" class="w-5/6 mx-auto text-center font-bold text-4xl lg:text-6xl my-12 lg:indent-16">杰哥的评论区! </h1>
+    <p class="w-5/6 mx-auto text-center"><del>反正就是评论区了 剩下的懒得写了</del></p>
     <div class="w-5/6 mx-auto mb-16">
         <div class="card lg:card-side bg-base-100 shadow-xl">
         <figure data-aos="zoom-in">

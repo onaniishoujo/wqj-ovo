@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 
+* {
+    scrollbar-color: unset;
+}
+
 body {
     background-image: url(background.png);
     /* background-color: #f7f7f7; */
