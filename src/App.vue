@@ -9,6 +9,13 @@ import aos from 'aos'
 import 'aos/dist/aos.css'
 
 aos.init()
+document.addEventListener('DOMContentLoaded', ()=>{
+    const params = new URLSearchParams(location.search)
+    const qname = params.get('name')?.replace(/<|>/g, '')
+    if (qname) {
+        document.documentElement.innerHTML = document.documentElement.innerHTML.replace(/王庆杰|杰哥/g, qname)
+    }
+})
 </script>
 
 <template>

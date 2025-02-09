@@ -60,7 +60,7 @@
 import { Waline } from '@waline/client/component'
 import '@waline/client/style'
   
-const serverURL: string = 'https://waline-1-g2450170.deta.app/'
+const serverURL: string = 'https://pink.deno.dev/'
 const path: string = location.pathname
 </script>
 

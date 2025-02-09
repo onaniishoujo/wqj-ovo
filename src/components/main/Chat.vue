@@ -84,8 +84,7 @@ const ipt: Ref<HTMLElement | undefined> = ref()
 
 function submitText(): void {
     if (msgBody.value) {
-        msg.value = msg.value.replace(/</g, '')
-        msg.value = msg.value.replace(/>/g, '')
+        msg.value = msg.value.replace(/<|>/g, '')
         let msgTemplate: string = `<div class="chat chat-end"><div class="chat-image avatar"><div class="w-10 rounded-full"><img src="/src/assets/avatar.jpg" /></div></div><div class="chat-header">オナニー少女w<time class="text-xs opacity-50">12:46</time></div><div data-aos="zoom-in-left" class="chat-bubble bg-green-400 text-black break-all">${msg.value}</div><div class="chat-footer opacity-50">Seen at 12:46</div>`
         msgBody.value.innerHTML += msgTemplate
         let s = document.getElementById('submit_button') as HTMLElement

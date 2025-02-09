@@ -6,7 +6,7 @@
     <div class="lg:hidden text-xl text-center mx-auto text-gray-600 font-extrabold w-4/5 -mt-20 mb-5">
         ブラザージャーとは? 
     </div>
-    <div class="card mx-auto w-5/6 bg-[#66ccff] bg-opacity-20 backdrop-blur-sm shadow-lg">
+    <div class="card mx-auto w-5/6 bg-[#66ccff] bg-opacity-20 shadow-lg">
         <div class="card-body">
             <Sakana />
         </div>
